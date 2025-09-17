@@ -1,4 +1,4 @@
-# Maquina de vendas em ASM MIPS 32
+# Maquina de vendas em MIPS 32
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Zev07/meu-template-inicial?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/Zev07/meu-template-inicial?style=for-the-badge)
