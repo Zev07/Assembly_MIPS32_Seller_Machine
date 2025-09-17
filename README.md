@@ -1,10 +1,7 @@
 # Maquina de vendas em MIPS 32
 
-![GitHub repo size](https://img.shields.io/github/repo-size/Zev07/meu-template-inicial?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/Zev07/meu-template-inicial?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/Zev07/meu-template-inicial?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/Zev07/meu-template-inicial?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Zev07/meu-template-inicial?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/Zev07/Assembly_MIPS32_Seller_Machine?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/Zev07/Assembly_MIPS32_Seller_Machine?style=for-the-badge)
 
 
 ### Sobre o projeto
