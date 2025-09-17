@@ -1,4 +1,4 @@
-# Template Incial
+# Maquina de vendas em ASM MIPS 32
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Zev07/meu-template-inicial?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/Zev07/meu-template-inicial?style=for-the-badge)
@@ -6,57 +6,40 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/Zev07/meu-template-inicial?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Zev07/meu-template-inicial?style=for-the-badge)
 
-<img src="imagem.png" alt="Exemplo imagem">
 
 ### Sobre o projeto
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Este projeto é reflexo de uma proposta como primeira atividade avaliativa no sentido de desenvolver
+programa de baixo nível com base em uma arquitetura de microprocessador. O trabalho é baseado
+na arquitetura MIPS.
+
 
 ### Tecnologias Utilizadas
+MIPSx32 Assembly
 
-### Ajustes e melhorias
+### FlowChart
 
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
 
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-- Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-- Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-- Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+- Você instalou a versão mais recente do `Java Runtime Environment (JRE)`.
+- Você tem uma máquina `Windows`, `macOS` ou `Linux`. O `MARS` é multiplataforma e funciona em qualquer um desses sistemas operacionais, desde que o `JRE` esteja instalado.
+- Você tem conhecimento básico em `Assembly MIPS 32-bit`, incluindo a arquitetura, registradores, instruções e o funcionamento da memória.
 
-## 🚀 Instalando <nome_do_projeto>
+## 🚀 Baixando e Executando o Mars
 
-Para instalar o <nome_do_projeto>, siga estas etapas:
+Para baixar e executar o simulador MARS, siga estas etapas simples:
 
-Linux e macOS:
+<h5>Acesse o site oficial do MARS (ou um repositório como o GitHub) para baixar a versão mais recente do arquivo Mars.jar.</h5>
 
+- Salve o arquivo em qualquer pasta do seu computador (como a pasta Downloads ou Documentos).
+
+<h5> Para executar o Mars, você pode fazer uma das seguintes opções:</h5>
+
+- Clique duas vezes no arquivo Mars.jar se a sua máquina estiver configurada para abrir arquivos .jar diretamente.
+ Se o método acima não funcionar, abra um terminal (no Linux/macOS) ou o Prompt de Comando (no Windows), navegue até a pasta onde você salvou o arquivo e execute o seguinte comando:
 ```
-<comando_de_instalação>
+<java -jar Mars.jar>
 ```
-
-Windows:
-
-```
-<comando_de_instalação>
-```
-
-## ☕ Usando <nome_do_projeto>
-
-Para usar <nome_do_projeto>, siga estas etapas:
-
-```
-<exemplo_de_uso>
-```
-
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Forneça uma referência de opções para pontos de bônus!
-
-## 📝 Licença
-
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
