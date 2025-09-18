@@ -14,8 +14,38 @@ na arquitetura MIPS.
 MIPSx32 Assembly
 
 ### FlowChart:
-[![](https://mermaid.ink/img/pako:eNqNlN9u2jAUxl_F8g2ZBCyBFEKkdVoDtLSFQUG7aKiQiQ2xltjIcVhXxNP0YtrFLvcEvNgcJ-k_VGlRFMX27zvn2OeTdzDgmEAXriL-IwiRkGDWnTOgni_-gB3-BJS7YIgouwO12ik4M6Y0TiMkQI9JgTACmIAuZSGhgn_IhWea9AwvRLECAxQFmWKxRREXC8oSIigu4fybpMu1QJsQ9FN2-HX4S5J8vuu_o86r6RlTnqWQHPMEqFdDJAEllhRZehrv-zdEcsGU4lsGghmXKAKDMmbOEoZfluZp6fkuV4zRmoPTT4UeczAWHKeSf96_1JwrDRgdHrnWXvi9e7qkAlRylSouXdGAEiZJpUh6ocmB3yVbHm1JWSBRxxwQIZAouIHmbv0-jYvs6txidHeUXbVJo5fG6-QbtYFKcSqXmrh6Q6iwm3xTJXeluWvDK3oBZoIHZQOv9eLwKYheK5VDvTg6soLMoAWXNKYP6D-98NV_T56bYfxc30TiemZM7_Abq4nk45ATjEozjDU-Mbo0kYIuU1U1f7WliQZunt1y1IY3HhlpwdQvKRUNsQSp6h9LV03zxsEqXCuvQVeKlFRhTESMsiHcZdgcypDEZA5d9YuR-D6Hc7ZXmg1it5zHpUzwdB1Cd4WiRI3SDUaSdCnKrPA0K1SNRHg8ZRK67c6JDgLdHbyHbs0-qbc6TdM0O07btixTrf5U0w3TrFvNjmU3222n2Wk4jX0VPujEVr1h2Xaz5ThOq2O3W81GFRJM1QEN8wtE3yP7fyvHXAQ?type=png)](https://mermaid.live/edit#pako:eNqNlN9u2jAUxl_F8g2ZBCyBFEKkdVoDtLSFQUG7aKiQiQ2xltjIcVhXxNP0YtrFLvcEvNgcJ-k_VGlRFMX27zvn2OeTdzDgmEAXriL-IwiRkGDWnTOgni_-gB3-BJS7YIgouwO12ik4M6Y0TiMkQI9JgTACmIAuZSGhgn_IhWea9AwvRLECAxQFmWKxRREXC8oSIigu4fybpMu1QJsQ9FN2-HX4S5J8vuu_o86r6RlTnqWQHPMEqFdDJAEllhRZehrv-zdEcsGU4lsGghmXKAKDMmbOEoZfluZp6fkuV4zRmoPTT4UeczAWHKeSf96_1JwrDRgdHrnWXvi9e7qkAlRylSouXdGAEiZJpUh6ocmB3yVbHm1JWSBRxxwQIZAouIHmbv0-jYvs6txidHeUXbVJo5fG6-QbtYFKcSqXmrh6Q6iwm3xTJXeluWvDK3oBZoIHZQOv9eLwKYheK5VDvTg6soLMoAWXNKYP6D-98NV_T56bYfxc30TiemZM7_Abq4nk45ATjEozjDU-Mbo0kYIuU1U1f7WliQZunt1y1IY3HhlpwdQvKRUNsQSp6h9LV03zxsEqXCuvQVeKlFRhTESMsiHcZdgcypDEZA5d9YuR-D6Hc7ZXmg1it5zHpUzwdB1Cd4WiRI3SDUaSdCnKrPA0K1SNRHg8ZRK67c6JDgLdHbyHbs0-qbc6TdM0O07btixTrf5U0w3TrFvNjmU3222n2Wk4jX0VPujEVr1h2Xaz5ThOq2O3W81GFRJM1QEN8wtE3yP7fyvHXAQ)
 
+```mermaid
+graph TD;
+    A[Início: Main] --> B(Simular Entrada de Dinheiro);
+    B --> C(Chamar calcular_valor_inserido);
+    
+    subgraph Funções
+    D[calcular_valor_inserido] --> E(Somar todos os valores inseridos);
+    E --> F[Retornar Valor Total Inserido];
+    end
+    
+    C --> G{Valor Pago >= Valor do Produto?};
+    
+    G -- Não --> H[Exibir 'Valor insuficiente'];
+    H --> I[Devolver Valor e Encerrar];
+    I --> Z[Fim do Programa];
+    
+    G -- Sim --> J(Exibir 'Valor pago');
+    J --> K(Exibir 'Valor do produto');
+    K --> L(Calcular Troco);
+    L --> M(Exibir 'Troco');
+    M --> N(Chamar calcular_troco_otimizado);
+    
+    subgraph Funções
+    O[calcular_troco_otimizado] --> P(Calcular Qtd. de Cédulas/Moedas);
+    P --> Q(Distribuir o Troco);
+    Q --> R[Retornar e Encerrar];
+    end
+    
+    N --> S[Encerrar Transação];
+    S --> Z;
+```
 
 ## 💻 Pré-requisitos
 
