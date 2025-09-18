@@ -109,8 +109,8 @@ valor_suficiente:
     
     # NOTA: Processamento adicional (exibição de valores e cálculo de troco)
     # será implementado
-    
-    # [PLACEHOLDER PARA MÓDULOS FUTUROS] # Placeholder são comentários temporários
+
+    # [PLACEHOLDER PARA MÓDULOS FUTUROS] # Placeholder são comentários/anotações temporárias, também serve como estrutura temporária
     # - Exibição formatada dos valores
     # - Cálculo e distribuição otimizada do troco
     # - Atualização dos registradores de saída
