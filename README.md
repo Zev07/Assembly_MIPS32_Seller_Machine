@@ -11,7 +11,7 @@ na arquitetura MIPS.
 
 
 ### Tecnologias Utilizadas
-MIPSx32 Assembly
+**MIPSx32 Assembly**
 
 ### FlowChart:
 
