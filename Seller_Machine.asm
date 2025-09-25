@@ -147,41 +147,19 @@ main:
     move    $t1, $v0                    # $t1 = valor total inserido em centavos
 
     #---------------------------------------------------------------------------
-    # BLOCO 3: COMPARAÇÃO E FLUXO (SUFICIENTE / INSUFICIENTE)
+    # BLOCO 2: CHAMADA PARA MÓDULO DE CÁLCULOS
+    #
+    # Transfere controle para outras partes do sistema que serão desenvolvidas
     #---------------------------------------------------------------------------
-    sub     $t0, $t1, $t9               # $t0 = valor inserido - valor produto
-    bltz    $t0, valor_insuficiente     # se negativo, valor insuficiente
-    # Se chegou aqui -> valor suficiente (ou exato)
     
-    # Exibir valor pago
-    li      $v0, 4
-    la      $a0, msg_valor_pago
-    syscall
-    move    $a0, $t1                    # passar valor pago em centavos
-    jal     exibir_valor_monetario
-    li      $v0, 4
-    la      $a0, msg_nova_linha
-    syscall
+    # Chama módulo de cálculo de valor total inserido
+    # (Ainda vai ser implementada responsável pelo meio do código)
+
+    jal calcular_valor_inserido # Aqui iria a chamada para o módulo de cálculo
     
-    # Exibir valor do produto
-    li      $v0, 4
-    la      $a0, msg_valor_produto
-    syscall
-    move    $a0, $t9                    # valor do produto em centavos
-    jal     exibir_valor_monetario
-    li      $v0, 4
-    la      $a0, msg_nova_linha
-    syscall
+    # Armazena resultado do cálculo
+    move $t1, $v0              # $t1 = valor total inserido em centavos
     
-    # Exibir troco
-    li      $v0, 4
-    la      $a0, msg_troco
-    syscall
-    move    $a0, $t0                    # troco em centavos
-    jal     exibir_valor_monetario
-    li      $v0, 4
-    la      $a0, msg_nova_linha
-    syscall
     #---------------------------------------------------------------------------
     # BLOCO 4: CALCULAR DISTRIBUIÇÃO OTIMIZADA DO TROCO
     #---------------------------------------------------------------------------
@@ -323,108 +301,30 @@ valor_insuficiente:
 # SAÍDA:     $v0      = valor total em centavos
 #===============================================================================
 calcular_valor_inserido:
-    # Salvar registradores na pilha
-    addi    $sp, $sp, -8
-    sw      $ra, 4($sp)
-    sw      $s0, 0($sp)
+    # TODO: Implementar cálculo do valor total inserido
+    # Deve somar: ($s0×2000) + ($s1×1000) + ($s2×500) + ($s3×200) +
+    #             ($s4×100) + ($s5×50) + ($s6×25) + ($s7×10)
+    # Retorno em $v0: valor total em centavos
     
-    # Inicializar acumulador
-    li      $v0, 0                      # acumula total em centavos
-    
-    # Cédulas de R$20,00 ($s0 * 2000)
-    mul     $t0, $s0, 2000
-    add     $v0, $v0, $t0
-    
-    # Cédulas de R$10,00 ($s1 * 1000)
-    mul     $t0, $s1, 1000
-    add     $v0, $v0, $t0
-    
-    # Cédulas de R$5,00 ($s2 * 500)
-    mul     $t0, $s2, 500
-    add     $v0, $v0, $t0
-    
-    # Cédulas de R$2,00 ($s3 * 200)
-    mul     $t0, $s3, 200
-    add     $v0, $v0, $t0
-    
-    # Moedas de R$1,00 ($s4 * 100)
-    mul     $t0, $s4, 100
-    add     $v0, $v0, $t0
-    
-    # Moedas de R$0,50 ($s5 * 50)
-    mul     $t0, $s5, 50
-    add     $v0, $v0, $t0
-    
-    # Moedas de R$0,25 ($s6 * 25)
-    mul     $t0, $s6, 25
-    add     $v0, $v0, $t0
-    
-    # Moedas de R$0,10 ($s7 * 10)
-    mul     $t0, $s7, 10
-    add     $v0, $v0, $t0
-    
-    # Restaurar registradores e retornar
-    lw      $s0, 0($sp)
-    lw      $ra, 4($sp)
-    addi    $sp, $sp, 8
-    jr      $ra
-#===============================================================================
-# FUNÇÃO: exibir_valor_monetario
-#
-# DESCRIÇÃO: Exibe valor monetário formatado como "reais,centavos"
-#             Exemplo: 2750 centavos -> "27,50"
-#
-# ENTRADA:    $a0 = valor em centavos
-# SAÍDA:     Imprime o valor formatado (sem o símbolo R$)
-#
-# NOTA:       O chamador deve imprimir o prefixo "R$" antes de chamar esta função
-#===============================================================================
+    li $v0, 0                  # Placeholder: retorna 0 temporariamente
+    jr $ra                     # Retorna para chamador
+
+# [PLACEHOLDER] Função a ser implementada pelo módulo de interface
 exibir_valor_monetario:
-    # Salvar registradores na pilha
-    addi    $sp, $sp, -12
-    sw      $ra, 8($sp)
-    sw      $t2, 4($sp)
-    sw      $t3, 0($sp)
+    # TODO: Implementar formatação e exibição de valores monetários
+    # Entrada: $a0 = valor em centavos
+    # Saída: valor formatado como "XX,XX" no visor
     
-    # Dividir centavos por 100 para separar reais e centavos
-    li      $t2, 100
-    div     $a0, $t2
-    mflo    $t3                         # $t3 = reais (parte inteira)
-    mfhi    $t4                         # $t4 = centavos (resto)
+    jr $ra                     # Retorna para chamador
+
+# [PLACEHOLDER] Função a ser implementada pelo módulo de troco
+calcular_troco_otimizado:
+    # TODO: Implementar algoritmo de distribuição otimizada de troco
+    # Entrada: $a0 = valor do troco em centavos
+    # Saída: registradores $s0-$s7 e $t9 com quantidades de cada denominação
     
-    # Imprimir parte dos reais
-    li      $v0, 1
-    move    $a0, $t3
-    syscall
-    
-    # Imprimir vírgula separadora
-    li      $v0, 4
-    la      $a0, msg_virgula
-    syscall
-    
-    # Imprimir centavos com 2 dígitos (adicionar zero à esquerda se necessário)
-    blt     $t4, 10, ev_print_zero_first
-    li      $v0, 1
-    move    $a0, $t4
-    syscall
-    j       ev_end_print
-    
-ev_print_zero_first:
-    # Imprimir '0' antes do dígito dos centavos
-    li      $v0, 11
-    li      $a0, '0'
-    syscall
-    li      $v0, 1
-    move    $a0, $t4
-    syscall
-    
-ev_end_print:
-    # Restaurar registradores e retornar
-    lw      $t3, 0($sp)
-    lw      $t2, 4($sp)
-    lw      $ra, 8($sp)
-    addi    $sp, $sp, 12
-    jr      $ra
+    jr $ra                     # Retorna para chamador
+
 #===============================================================================
 # FUNÇÃO: calcular_troco_otimizado
 #
